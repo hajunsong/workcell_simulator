@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="keti_workcell_control" type="robot_control_node" name="robot_control_node" output="screen"/>
+    <include file="$(find keti_workcell_description)/launch/display.launch"/>
+</launch>

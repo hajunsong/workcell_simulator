@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="base_ETC">
+
+	<link name="world" />
+	<joint name="world_to_base_ETC" type="fixed">
+		<origin xyz="-0.80481 0 -0.0135" rpy="0 0 0"/>
+		<parent link="world"/>
+		<child link="base_ETC"/>
+		<axis xyz="0 0 0"/>
+	</joint>
+
+	<link name="base_ETC">
+		<visual>
+			<geometry>
+				<mesh filename="package://keti_workcell_description/meshes/base2.STL"/>
+			</geometry>
+			<material name="base_color">
+				<color rgba="0.89 0.91 0.93 1" />
+			</material>
+		</visual>
+	</link>
+	<link name="feeder">
+		<visual>
+			<geometry>
+				<mesh filename="package://keti_workcell_description/meshes/feeder.STL"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.29 0.61 0.93 1" />
+			</material>
+		</visual>
+	</link>
+	<joint name="base_ETC_to_feeder" type="fixed">
+		<origin xyz="-0.24992 0.19561 0.8465" rpy="0 0 0"/>
+		<parent link="base_ETC"/>
+		<child link="feeder"/>
+		<axis xyz="0 0 0"/>
+	</joint>
+	<link name="tool_stand">
+		<visual>
+			<geometry>
+				<mesh filename="package://keti_workcell_description/meshes/tool_stand.STL"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.5 0.5 0.5 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="base_ETC_to_tool_stand" type="fixed">
+		<origin xyz="0.15008 0.14561 0.8465" rpy="0 0 -1.5708"/>
+		<parent link="base_ETC"/>
+		<child link="tool_stand"/>
+		<axis xyz="0 0 0"/>
+	</joint>
+	<link name="koras_2f_stand">
+		<visual>
+			<geometry>
+				<mesh filename="package://keti_workcell_description/meshes/koras_2f.STL"/>
+			</geometry>
+			<material name="koras_2f_color">
+				<color rgba="0.6 0.5 0.9 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="tool_stand_to_koras_2f" type="fixed">
+		<origin xyz="-0.12582 0 0.312" rpy="3.1416 0 1.5709"/>
+		<parent link="tool_stand"/>
+		<child link="koras_2f_stand"/>
+		<axis xyz="0 0 0"/>
+	</joint>
+	<link name="KRVG_stand">
+		<visual>
+			<geometry>
+				<mesh filename="package://keti_workcell_description/meshes/KRVG.STL"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.6 0.5 0.0 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="tool_stand_to_KRVG" type="fixed">
+		<origin xyz="-0.12582 -0.1525 0.3125" rpy="3.1416 0 1.5709"/>
+		<parent link="tool_stand"/>
+		<child link="KRVG_stand"/>
+		<zxis xyz="0 0 0"/>
+	</joint>
+	<link name="ATC_stand">
+		<visual>
+			<geometry>
+				<mesh filename="package://keti_workcell_description/meshes/ATC.STL"/>
+			</geometry>
+			<material name="ATC_color">
+				<color rgba="0.0 0.5 0.6 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="tool_stand_to_ATC" type="fixed">
+		<origin xyz="-0.1258 0.1525 0.314" rpy="3.1416 0 1.5709"/>
+		<parent link="tool_stand"/>
+		<child link="ATC_stand"/>
+		<axis xyz="0 0 0"/>
+	</joint>
+</robot>
