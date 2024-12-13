@@ -1,28 +1,31 @@
 <launch>
 
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find keti_workcell_description)/urdf.rviz" />
+	<!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+	<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_ARF.urdf" />
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> -->
 	
     <group ns="base_UR">
 		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
-		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_UR_test.urdf" />
-		<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_UR.urdf" />
+		<!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> -->
     </group>
 	
     <group ns="base_ARF">
 		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
-		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_ARF_test.urdf" />
-		<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_ARF.urdf" />
+		<!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> -->
     </group>
 	
     <group ns="base_DENSO">
 		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
-		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_DENSO_test.urdf" />
-		<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_DENSO.urdf" />
+		<!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> -->
     </group>
 	
     <group ns="base_ETC">
 		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
-		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_ETC_test.urdf" />
+		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_ETC.urdf" /> 
     </group>
 
   </launch>

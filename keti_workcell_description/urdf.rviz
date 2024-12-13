@@ -135,27 +135,7 @@ Visualization Manager:
       Collision Enabled: false
       Enabled: true
       Links:
-        ARF_jig:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        ARF_jig2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        ARF_slider1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        ARF_slider2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        ARF_slider_base1:
+        ATC_stand:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -164,42 +144,28 @@ Visualization Manager:
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
+        KRVG_stand:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         Link Tree Style: Links in Alphabetic Order
-        base_ARF:
+        base_ETC:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        obj1:
+        feeder:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        obj2:
+        koras_2f_stand:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        s4_dummy:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        tooltip11:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tooltip12:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tooltip21:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tooltip22:
+        tool_stand:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -208,18 +174,8 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        zimmer1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        zimmer2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: RobotModel
-      Robot Description: base_ARF/robot_description
+      Robot Description: base_ETC/robot_description
       TF Prefix: ""
       Update Interval: 0
       Value: true
@@ -323,7 +279,27 @@ Visualization Manager:
       Collision Enabled: false
       Enabled: true
       Links:
-        ATC_stand:
+        ARF_jig:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ARF_jig2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ARF_slider1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ARF_slider2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ARF_slider_base1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -332,28 +308,42 @@ Visualization Manager:
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
-        KRVG_stand:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         Link Tree Style: Links in Alphabetic Order
-        base_ETC:
+        base_ARF:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        feeder:
+        obj1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        koras_2f_stand:
+        obj2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        tool_stand:
+        s4_dummy:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        tooltip11:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tooltip12:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tooltip21:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tooltip22:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -362,8 +352,18 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        zimmer1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        zimmer2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Name: RobotModel
-      Robot Description: base_ETC/robot_description
+      Robot Description: base_ARF/robot_description
       TF Prefix: ""
       Update Interval: 0
       Value: true
@@ -396,7 +396,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.77609395980835
+      Distance: 4.354358196258545
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -404,17 +404,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -0.6055991053581238
-        Y: -0.018645547330379486
-        Z: 0.550733208656311
+        X: -0.669256329536438
+        Y: -0.0019412762485444546
+        Z: 0.5377741456031799
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7103981971740723
+      Pitch: 0.6653982400894165
       Target Frame: <Fixed Frame>
-      Yaw: 1.0703980922698975
+      Yaw: 0.8053983449935913
     Saved: ~
 Window Geometry:
   Displays:
@@ -432,5 +432,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1541
-  X: 14
-  Y: 479
+  X: 72
+  Y: 107
