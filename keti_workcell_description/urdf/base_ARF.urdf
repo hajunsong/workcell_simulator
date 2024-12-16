@@ -4,7 +4,7 @@
 	<link name="base_ARF">
 		<visual>
 			<geometry>
-				<mesh filename="package://keti_workcell_description/meshes/base2.STL" />
+				<mesh filename="package://keti_workcell_description/meshes/base1.STL" />
 			</geometry>
 			<material name="">
 				<color rgba="0.89 0.91 0.93 1" />
@@ -142,8 +142,68 @@
 			</material>
 		</visual>
 	</link>
+	<link name="dockingsystem">
+		<visual>
+			<geometry>
+				<mesh filename="package://keti_workcell_description/meshes/docking.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</visual>
+	</link>
+	<link name="cam_jig">
+		<visual>
+			<geometry>
+				<mesh filename="package://keti_workcell_description/meshes/cam_jig.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.9 0.9 0.9 1" />
+			</material>
+		</visual>
+	</link>
+	<link name="grip_adapter11">
+		<visual>
+			<geometry>
+				<mesh filename="package://keti_workcell_description/meshes/grip_adapter.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.4 0.5 1" />
+			</material>
+		</visual>
+	</link>
+	<link name="grip_adapter12">
+		<visual>
+			<geometry>
+				<mesh filename="package://keti_workcell_description/meshes/grip_adapter.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.4 0.5 1" />
+			</material>
+		</visual>
+	</link>
+	<link name="grip_adapter21">
+		<visual>
+			<geometry>
+				<mesh filename="package://keti_workcell_description/meshes/grip_adapter.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.4 0.5 1" />
+			</material>
+		</visual>
+	</link>
+	<link name="grip_adapter22">
+		<visual>
+			<geometry>
+				<mesh filename="package://keti_workcell_description/meshes/grip_adapter.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.4 0.5 1" />
+			</material>
+		</visual>
+	</link>
 	<joint name="base_ARF_fixed" type="fixed">
-		<origin xyz="-0.00026 0.80842 -0.0135" rpy="0 0 3.1416" />
+		<origin xyz="-0.00026 0.80842 0" rpy="0 0 -1.5709" />
 		<parent link="world" />
 		<child link="base_ARF" />
 	</joint>
@@ -202,31 +262,61 @@
 		<child link="zimmer2" />
 	</joint>
 	<joint name="s5" type="prismatic">
-		<origin xyz="-0.00037 0.00443 -0.041" rpy="0 0 0" />
+		<origin xyz="-0.00037 0.00443 -0.041" rpy="0 3.1416 0" />
 		<parent link="zimmer1" />
-		<child link="tooltip11" />
+		<child link="grip_adapter11" />
 		<axis xyz="0 0 1" />
 		<limit lower="0.0" upper="0.04" effort="100" velocity="10" />
 	</joint>
 	<joint name="s6" type="prismatic">
-		<origin xyz="-0.00037 0.00443 0.041" rpy="0 3.1416 0" />
+		<origin xyz="-0.00037 0.00443 0.041" rpy="0 0 0" />
 		<parent link="zimmer1" />
-		<child link="tooltip12" />
+		<child link="grip_adapter12" />
 		<axis xyz="0 0 1" />
 		<limit lower="0.0" upper="0.04" effort="100" velocity="10" />
 	</joint>
 	<joint name="s7" type="prismatic">
 		<origin xyz="-0.00037 0.00443 -0.041" rpy="0 0 0" />
 		<parent link="zimmer2" />
-		<child link="tooltip21" />
+		<child link="grip_adapter21" />
 		<axis xyz="0 0 1" />
 		<limit lower="0.0" upper="0.04" effort="100" velocity="10" />
 	</joint>
 	<joint name="s8" type="prismatic">
 		<origin xyz="-0.00037 0.00443 0.041" rpy="0 3.1416 0" />
 		<parent link="zimmer2" />
-		<child link="tooltip22" />
+		<child link="grip_adapter22" />
 		<axis xyz="0 0 1" />
 		<limit lower="0.0" upper="0.04" effort="100" velocity="10" />
+	</joint>
+	<joint name="dockingsystem_fixed" type="fixed">
+		<origin xyz="-0.79918 -0.00336 -0.011" rpy="0 0 1.5709" />
+		<parent link="base_ARF" />
+		<child link="dockingsystem" />
+	</joint>
+	<joint name="cam_jig_fixed" type="fixed">
+		<origin xyz="-0.00103 -0.04935 0.831" rpy="0 0 -1.5709" />
+		<parent link="dockingsystem" />
+		<child link="cam_jig" />
+	</joint>
+	<joint name="grip_tooltip11" type="fixed">
+		<origin xyz="-0.00037 0.01437 0.019" rpy="0 0 0" />
+		<parent link="grip_adapter11" />
+		<child link="tooltip11" />
+	</joint>
+	<joint name="grip_tooltip12" type="fixed">
+		<origin xyz="-0.00037 0.01437 0.019" rpy="0 0 0" />
+		<parent link="grip_adapter12" />
+		<child link="tooltip12" />
+	</joint>
+	<joint name="grip_tooltip21" type="fixed">
+		<origin xyz="-0.00037 0.01437 0.019" rpy="0 0 0" />
+		<parent link="grip_adapter21" />
+		<child link="tooltip21" />
+	</joint>
+	<joint name="grip_tooltip22" type="fixed">
+		<origin xyz="-0.00037 0.01437 0.019" rpy="0 0 0" />
+		<parent link="grip_adapter22" />
+		<child link="tooltip22" />
 	</joint>
 </robot>

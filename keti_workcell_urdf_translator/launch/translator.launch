@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="keti_workcell_urdf_translator" type="urdf_translator_node" name="urdf_translator_node" output="screen"/>
+</launch>
