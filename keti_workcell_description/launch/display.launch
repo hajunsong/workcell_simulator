@@ -28,4 +28,9 @@
 		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_ETC.urdf" /> 
     </group>
 
+	<group ns="base_VISION">
+		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_VISION.urdf" /> 
+	</group>
+
   </launch>

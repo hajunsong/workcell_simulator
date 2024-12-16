@@ -142,7 +142,7 @@
 			</material>
 		</visual>
 	</link>
-	<link name="dockingsystem">
+	<!-- <link name="dockingsystem">
 		<visual>
 			<geometry>
 				<mesh filename="package://keti_workcell_description/meshes/docking.STL" />
@@ -161,7 +161,7 @@
 				<color rgba="0.9 0.9 0.9 1" />
 			</material>
 		</visual>
-	</link>
+	</link> -->
 	<link name="grip_adapter11">
 		<visual>
 			<geometry>
@@ -289,7 +289,7 @@
 		<axis xyz="0 0 1" />
 		<limit lower="0.0" upper="0.04" effort="100" velocity="10" />
 	</joint>
-	<joint name="dockingsystem_fixed" type="fixed">
+	<!-- <joint name="dockingsystem_fixed" type="fixed">
 		<origin xyz="-0.79918 -0.00336 -0.011" rpy="0 0 1.5709" />
 		<parent link="base_ARF" />
 		<child link="dockingsystem" />
@@ -298,7 +298,7 @@
 		<origin xyz="-0.00103 -0.04935 0.831" rpy="0 0 -1.5709" />
 		<parent link="dockingsystem" />
 		<child link="cam_jig" />
-	</joint>
+	</joint> -->
 	<joint name="grip_tooltip11" type="fixed">
 		<origin xyz="-0.00037 0.01437 -0.019" rpy="0 0 0" />
 		<parent link="grip_adapter11" />

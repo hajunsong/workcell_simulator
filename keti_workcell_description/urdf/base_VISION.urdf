@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="base_ETC">
+	<link name="world" />
+	<link name="base_VISION">
+		<visual>
+			<geometry>
+				<mesh filename="package://keti_workcell_description/meshes/base3.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.89 0.91 0.93 1" />
+			</material>
+		</visual>
+	</link>
+	<link name="cam_jig">
+		<visual>
+			<geometry>
+				<mesh filename="package://keti_workcell_description/meshes/cam_jig.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.89 0.31 0.33 1" />
+			</material>
+		</visual>
+	</link>
+	
+	<joint name="base_VISION_fixed" type="fixed">
+		<origin xyz="0.0012 1.59996 -0.011" rpy="0 0 0" />
+		<parent link="world" />
+		<child link="base_VISION" />
+	</joint>
+	<joint name="cam_jig_fixed" type="fixed">
+		<origin xyz="-0.00103 -0.04935 0.831" rpy="0 0 -1.5709" />
+		<parent link="base_VISION" />
+		<child link="cam_jig" />
+	</joint>
+</robot>
