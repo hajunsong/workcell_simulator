@@ -17,7 +17,7 @@
 				<mesh filename="package://keti_workcell_description/meshes/cam_jig.STL" />
 			</geometry>
 			<material name="">
-				<color rgba="0.89 0.31 0.33 1" />
+				<color rgba="0.89 0.71 0.73 1" />
 			</material>
 		</visual>
 	</link>

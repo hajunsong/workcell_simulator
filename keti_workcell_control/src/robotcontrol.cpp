@@ -2,11 +2,11 @@
 
 RobotControl::RobotControl(ros::NodeHandle nh){
     pubUR = nh.advertise<sensor_msgs::JointState>("/base_UR/joint_states", 1);
-    pubARF = nh.advertise<sensor_msgs::JointState>("/base_ARF/joint_states", 1);
-    pubDENSO = nh.advertise<sensor_msgs::JointState>("/base_DENSO/joint_states", 1);
+    // pubARF = nh.advertise<sensor_msgs::JointState>("/base_ARF/joint_states", 1);
+    // pubDENSO = nh.advertise<sensor_msgs::JointState>("/base_DENSO/joint_states", 1);
     subUR = nh.subscribe("/base_UR/joint_states", 1, &RobotControl::cbJointStateUR, this);
-    subARF = nh.subscribe("/base_UR/joint_states", 1, &RobotControl::cbJointStateARF, this);
-    subDENSO = nh.subscribe("/base_UR/joint_states", 1, &RobotControl::cbJointStateDENSO, this);
+    // subARF = nh.subscribe("/base_ARF/joint_states", 1, &RobotControl::cbJointStateARF, this);
+    // subDENSO = nh.subscribe("/base_DENSO/joint_states", 1, &RobotControl::cbJointStateDENSO, this);
 
     msgUR.name.push_back("q1");
     msgUR.name.push_back("q2");
@@ -50,12 +50,12 @@ void RobotControl::start(){
         loop_rate.sleep();
 
         msgUR.header.stamp = ros::Time::now();
-        msgARF.header.stamp = ros::Time::now();
-        msgDENSO.header.stamp = ros::Time::now();
+        // msgARF.header.stamp = ros::Time::now();
+        // msgDENSO.header.stamp = ros::Time::now();
     
     pubUR.publish(msgUR);
-    pubARF.publish(msgARF);
-    pubDENSO.publish(msgDENSO);
+    // pubARF.publish(msgARF);
+    // pubDENSO.publish(msgDENSO);
     // }
 }
 
@@ -83,13 +83,13 @@ void RobotControl::setValue1(std::vector<double> value){
 void RobotControl::setValue2(std::vector<double> value){
     msgARF.header.stamp = ros::Time::now();
     memcpy(msgARF.position.data(), value.data(), sizeof(double)*6);
-    pubARF.publish(msgARF);
+    // pubARF.publish(msgARF);
 }
 
 void RobotControl::setValue3(std::vector<double> value){
     msgDENSO.header.stamp = ros::Time::now();
     memcpy(msgDENSO.position.data(), value.data(), sizeof(double)*6);
-    pubDENSO.publish(msgDENSO);
+    // pubDENSO.publish(msgDENSO);
 }
 
 void RobotControl::setValue4(std::vector<double> value){
