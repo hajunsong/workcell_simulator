@@ -6,10 +6,12 @@
 
 class RobotControl{
 public:
-    RobotControl(ros::NodeHandle nh);
+	RobotControl();
     ~RobotControl();
 
     void start();
+	void init(ros::NodeHandle nh);
+	void stop();
 
     void cbJointStateUR(const sensor_msgs::JointStatePtr &msg);
     void cbJointStateARF(const sensor_msgs::JointStatePtr &msg);
@@ -19,9 +21,15 @@ public:
     void setValue2(std::vector<double> value);
     void setValue3(std::vector<double> value);
     void setValue4(std::vector<double> value);
+
+	void getJointUR(std::vector<double> arg);
+	void getJointARF(std::vector<double> arg);
+	void getJointDENSO(std::vector<double> arg);
     
 private:
     ros::Subscriber subUR, subARF, subDENSO;
     ros::Publisher pubUR, pubARF, pubDENSO;
     sensor_msgs::JointState msgUR, msgARF, msgDENSO;
+
+	std::vector<double> jntUR, jntARF, jntDENSO;
 };

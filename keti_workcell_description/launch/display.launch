@@ -1,26 +1,27 @@
 <launch>
 
-	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find keti_workcell_description)/urdf.rviz" />
 	<!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
 	<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_ARF.urdf" />
 	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> -->
 	
+	<!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find keti_workcell_description)/urdf.rviz" /> -->
+	
     <group ns="base_UR">
 		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_UR.urdf" />
-		<node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+		<!-- <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" /> -->
     </group>
 	
     <group ns="base_ARF">
 		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_ARF.urdf" />
-		<node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+		<!-- <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" /> -->
     </group>
 	
     <group ns="base_DENSO">
 		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_DENSO.urdf" />
-		<node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+		<!-- <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" /> -->
     </group>
 	
     <group ns="base_ETC">

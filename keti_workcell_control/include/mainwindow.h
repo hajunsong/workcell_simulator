@@ -23,7 +23,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(int argc, char** argv, QWidget *parent=nullptr);
+	MainWindow(int argc, char** argv, std::string name, QWidget *parent=nullptr);
     ~MainWindow();
 
 private:
@@ -36,9 +36,21 @@ private:
 
     QTimer *timer;
 
+	int argc;
+	char** argv;
+	std::string name;
+
+	void init();
+	void stop();
+
 public slots:
     // button event
-    void btnStartClicked();
+//    void btnStartClicked();
+//	void btnClicked();
+	void btnShutdownClicked();
+	void btnResumeClicked();
+	void btnM1OnClicked();
+	void btnM1OffClicked();
 
     // slider event
     void valueChanged(int arg);

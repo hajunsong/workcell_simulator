@@ -12,8 +12,8 @@ int main(int argc, char** argv){
 
     // ros::waitForShutdown();
 
-    QApplication a(argc, argv);
-    MainWindow w(argc, argv);
+	QApplication a(argc, argv);
+	MainWindow w(argc, argv, "robot_control_node");
     w.show();
 
     return a.exec();

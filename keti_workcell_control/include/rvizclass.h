@@ -9,10 +9,15 @@
 class RvizClass{
 
 public:
-    RvizClass();
+	RvizClass(void *_ui);
     ~RvizClass();
 
-    void initRvizRobotModel(void *_ui);
+	void initRvizRobotModel();
+
+	void stop();
+	void enableModule1();
+	void disableModule1();
+	bool enableM1;
 
 private:
     rviz::VisualizationManager  *m_RvizManager;
@@ -22,8 +27,9 @@ private:
     rviz::Display               *m_RvizSetFixedFrame;
     rviz::Display               *m_RvizRobotModel1;
     rviz::Display               *m_RvizRobotModel2;
-    rviz::Display               *m_RvizRobotModel3;
-    rviz::Display               *m_RvizRobotModel4;
+	rviz::Display               *m_RvizRobotModel3;
+	rviz::Display               *m_RvizRobotModel4;
+	rviz::Display               *m_RvizRobotModel5;
 
     void setTopicRobot();
 };
