@@ -11,6 +11,8 @@ find_package(catkin REQUIRED COMPONENTS
 	roscpp
 	std_msgs
 	rviz
+	tf
+	geometry_msgs
 )
 
 catkin_package(

@@ -1,5 +1,29 @@
 <?xml version="1.0"?>
 <launch>
     <node pkg="keti_workcell_control" type="robot_control_node" name="robot_control_node" output="screen"/>
-    <include file="$(find keti_workcell_description)/launch/display.launch"/>
+    <!-- <include file="$(find keti_workcell_description)/launch/display.launch"/> -->
+    <group ns="base_UR">
+		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_UR.urdf" />
+    </group>
+	
+    <group ns="base_ARF">
+		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_ARF.urdf" />
+    </group>
+	
+    <group ns="base_DENSO">
+		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_DENSO.urdf" />
+    </group>
+	
+    <group ns="base_ETC">
+		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_ETC.urdf" /> 
+    </group>
+
+	<group ns="base_VISION">
+		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_VISION.urdf" /> 
+	</group>
 </launch>

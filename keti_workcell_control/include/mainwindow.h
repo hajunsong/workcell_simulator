@@ -5,8 +5,11 @@
 #include <QSlider>
 #include <QLineEdit>
 #include <QTimer>
+#include <QCloseEvent>
 
 #include <ros/ros.h>
+#include <geometry_msgs/PoseStamped.h>
+#include <tf/transform_broadcaster.h>
 
 #include <iostream>
 #include <vector>
@@ -31,6 +34,9 @@ private:
     RobotControl *robotControl;
     RvizClass *rvizClass;
 
+	tf::TransformBroadcaster *broadcaster;
+	double x = 0;
+
     std::vector<QSlider*> hs;
     std::vector<QLineEdit*> txt;
 
@@ -51,12 +57,16 @@ public slots:
 	void btnResumeClicked();
 	void btnM1OnClicked();
 	void btnM1OffClicked();
+    void btnMoveClicked();
 
     // slider event
     void valueChanged(int arg);
     
     // timer event
     void update();
+
+	// close event
+	void closeEvent(QCloseEvent *event);
 };
 
 #endif // MAINWINDOW_H

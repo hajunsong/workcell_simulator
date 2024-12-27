@@ -94,6 +94,8 @@ MainWindow::MainWindow(int _argc, char** _argv, std::string _name, QWidget *pare
 	connect(ui->btnM1On, SIGNAL(clicked()), this, SLOT(btnM1OnClicked()));
 	connect(ui->btnM1Off, SIGNAL(clicked()), this, SLOT(btnM1OffClicked()));
 
+    connect(ui->btnMove, SIGNAL(clicked()), this, SLOT(btnMoveClicked()));
+
 	init();
 }
 
@@ -102,9 +104,16 @@ MainWindow::~MainWindow(){
 	delete rvizClass;
 }
 
+void MainWindow::closeEvent(QCloseEvent *event){
+	ros::shutdown();
+	ros::waitForShutdown();
+	event->accept();
+}
+
 void MainWindow::init(){
 	ros::init(argc, argv, name);
-	ros::NodeHandle nh(name);
+	broadcaster = new tf::TransformBroadcaster();
+	ros::NodeHandle nh;
 	ros::start();
 	if(ros::isStarted()){
 		robotControl->init(nh);
@@ -146,20 +155,14 @@ void MainWindow::btnM1OffClicked(){
 	init();
 }
 
+void MainWindow::btnMoveClicked(){
+	x += 0.05;
+}
 
 void MainWindow::valueChanged(int arg){
-//    QString name = sender()->objectName();
-//    for(int i = 0; i < hs.size(); i++){
-//        if(name.compare(hs[i]->objectName()) == 0){
-//			txt[i]->setText(QString::number(static_cast<double>(hs[i]->value())*0.001));
-//        }
-//    }
 }
 
 void MainWindow::update(){
-//    for(int i = 0; i < txt.size(); i++){
-//		txt[i]->setText(QString::number(static_cast<double>(hs[i]->value())*0.001));
-//    }
     std::vector<double> temp;
     for(int i = 0; i < 6; i++){
 		temp.push_back(static_cast<double>(hs[i]->value())*0.001);
@@ -170,7 +173,8 @@ void MainWindow::update(){
 		txt[i]->setText(QString::number(temp[i]));
 	}
 	char msg_char[255];
-	sprintf(msg_char, "[INFO] [%d.%d] [UR] joint position : %.3f, %.3f, %.3f, %.3f, %.3f, %.3f", ros::Time::now().sec, ros::Time::now().nsec, temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]);
+	sprintf(msg_char, "[INFO] [%d.%d] [UR] joint position : %.3f, %.3f, %.3f, %.3f, %.3f, %.3f",
+			ros::Time::now().sec, ros::Time::now().nsec, temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]);
 	ui->txtMessage->append(msg_char);
 	temp.clear();
 
@@ -182,7 +186,8 @@ void MainWindow::update(){
 	for(int i = 0; i < 6; i++){
 		txt[i + 6]->setText(QString::number(temp[i]));
 	}
-	sprintf(msg_char, "[INFO] [%d.%d] [ARF] joint position : %.3f, %.3f, %.3f, %.3f, %.3f, %.3f", ros::Time::now().sec, ros::Time::now().nsec, temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]);
+	sprintf(msg_char, "[INFO] [%d.%d] [ARF] joint position : %.3f, %.3f, %.3f, %.3f, %.3f, %.3f",
+			ros::Time::now().sec, ros::Time::now().nsec, temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]);
 	ui->txtMessage->append(msg_char);
 	temp.clear();
 
@@ -194,9 +199,15 @@ void MainWindow::update(){
 	for(int i = 0; i < 6; i++){
 		txt[i + 12]->setText(QString::number(temp[i]));
 	}
-	sprintf(msg_char, "[INFO] [%d.%d] [DENSO] joint position : %.3f, %.3f, %.3f, %.3f, %.3f, %.3f", ros::Time::now().sec, ros::Time::now().nsec, temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]);
+	sprintf(msg_char, "[INFO] [%d.%d] [DENSO] joint position : %.3f, %.3f, %.3f, %.3f, %.3f, %.3f",
+			ros::Time::now().sec, ros::Time::now().nsec, temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]);
 	ui->txtMessage->append(msg_char);
 	temp.clear();
+
+	broadcaster->sendTransform(
+				tf::StampedTransform(
+					tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(x, 0.0, 0.2)),
+					ros::Time::now(),"world", "base_ETC"));
 
 	ros::spinOnce();
 }
