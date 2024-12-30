@@ -9,8 +9,6 @@ MainWindow::MainWindow(int _argc, char** _argv, std::string _name, QWidget *pare
 	argv = _argv;
 	name = _name;
 
-//	ros::init(argc, argv, name);
-
 	robotControl = new RobotControl();
 
 	rvizClass = new RvizClass(ui->vlRobotModel);
