@@ -7,6 +7,8 @@ MainWindow::MainWindow(ros::NodeHandle _nh, QWidget* parent) : nh(_nh), QMainWin
     settingClass = new SettingClass();
 
     connect(settingClass, SIGNAL(close()), this, SLOT(settingClose()));
+
+
 }
 
 MainWindow::~MainWindow(){
