@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<cell>
+	<section num="1">
+		<type />
+		<angle />
+	</section>
+	<section num="2">
+		<type />
+		<angle />
+	</section>
+	<section num="3">
+		<type>ROBOT</type>
+		<angle>270</angle>
+	</section>
+	<section num="4">
+		<type />
+		<angle />
+	</section>
+	<section num="5">
+		<type />
+		<angle />
+	</section>
+	<section num="6">
+		<type />
+		<angle />
+	</section>
+	<section num="7">
+		<type />
+		<angle />
+	</section>
+	<section num="8">
+		<type />
+		<angle />
+	</section>
+	<section num="9">
+		<type />
+		<angle />
+	</section>
+</cell>

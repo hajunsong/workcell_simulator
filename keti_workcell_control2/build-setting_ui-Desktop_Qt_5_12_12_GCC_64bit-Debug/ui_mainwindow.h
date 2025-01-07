@@ -15,7 +15,6 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -31,6 +30,7 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
+    QSpacerItem *verticalSpacer_2;
     QGroupBox *gbLayout;
     QGridLayout *gridLayout_2;
     QWidget *widget_layout;
@@ -48,15 +48,14 @@ public:
     QSpacerItem *verticalSpacer;
     QGroupBox *gbAdjust;
     QGridLayout *gridLayout_3;
-    QLineEdit *txtCellNum;
     QPushButton *btnCCW;
     QLabel *label_11;
     QLabel *label_10;
     QLabel *label;
     QPushButton *btnCW;
     QComboBox *cbCellType;
+    QLabel *txtCellNum;
     QPushButton *btnSave;
-    QSpacerItem *verticalSpacer_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -73,6 +72,10 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        verticalSpacer_2 = new QSpacerItem(20, 543, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer_2, 2, 1, 1, 1);
+
         gbLayout = new QGroupBox(centralwidget);
         gbLayout->setObjectName(QString::fromUtf8("gbLayout"));
         gbLayout->setMinimumSize(QSize(0, 0));
@@ -182,7 +185,7 @@ public:
         gridLayout_2->addWidget(widget_layout, 0, 0, 1, 1);
 
 
-        gridLayout->addWidget(gbLayout, 0, 0, 2, 1);
+        gridLayout->addWidget(gbLayout, 0, 0, 3, 1);
 
         gbAdjust = new QGroupBox(centralwidget);
         gbAdjust->setObjectName(QString::fromUtf8("gbAdjust"));
@@ -190,11 +193,6 @@ public:
         gbAdjust->setMaximumSize(QSize(300, 16777215));
         gridLayout_3 = new QGridLayout(gbAdjust);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        txtCellNum = new QLineEdit(gbAdjust);
-        txtCellNum->setObjectName(QString::fromUtf8("txtCellNum"));
-
-        gridLayout_3->addWidget(txtCellNum, 0, 1, 1, 2);
-
         btnCCW = new QPushButton(gbAdjust);
         btnCCW->setObjectName(QString::fromUtf8("btnCCW"));
 
@@ -225,17 +223,19 @@ public:
 
         gridLayout_3->addWidget(cbCellType, 1, 1, 1, 2);
 
-        btnSave = new QPushButton(gbAdjust);
-        btnSave->setObjectName(QString::fromUtf8("btnSave"));
+        txtCellNum = new QLabel(gbAdjust);
+        txtCellNum->setObjectName(QString::fromUtf8("txtCellNum"));
+        txtCellNum->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        gridLayout_3->addWidget(btnSave, 3, 0, 1, 3);
+        gridLayout_3->addWidget(txtCellNum, 0, 1, 1, 1);
 
 
         gridLayout->addWidget(gbAdjust, 0, 1, 1, 1);
 
-        verticalSpacer_2 = new QSpacerItem(20, 543, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        btnSave = new QPushButton(centralwidget);
+        btnSave->setObjectName(QString::fromUtf8("btnSave"));
 
-        gridLayout->addItem(verticalSpacer_2, 1, 1, 1, 1);
+        gridLayout->addWidget(btnSave, 1, 1, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -270,6 +270,7 @@ public:
         label_10->setText(QApplication::translate("MainWindow", "Cell Type : ", nullptr));
         label->setText(QApplication::translate("MainWindow", "Cell Num : ", nullptr));
         btnCW->setText(QApplication::translate("MainWindow", "CW", nullptr));
+        txtCellNum->setText(QApplication::translate("MainWindow", "-", nullptr));
         btnSave->setText(QApplication::translate("MainWindow", "Save", nullptr));
     } // retranslateUi
 
