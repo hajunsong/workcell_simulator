@@ -1,10 +1,9 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "settingclass.h"
+#include "ui_settingclass.h"
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
+SettingClass::SettingClass(QWidget *parent) : QWidget(parent), ui(new Ui::SettingClass)
 {
 	ui->setupUi(this);
-
 
 	QPixmap bkgnd(":/images/back.png");
 	bkgnd = bkgnd.scaled(ui->widget_layout->size(), Qt::IgnoreAspectRatio);
@@ -63,12 +62,19 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 	update();
 }
 
-MainWindow::~MainWindow()
+SettingClass::~SettingClass()
 {
 	delete ui;
 }
 
-void MainWindow::labelClicked(){
+
+void SettingClass::closeEvent(QCloseEvent *event){
+	std::cout << "setting window close" << std::endl;
+	emit windowClose();
+	event->accept();
+}
+
+void SettingClass::labelClicked(){
 //	qDebug() << sender()->objectName();
 //	qDebug() << sender()->objectName().split("_")[1].toUInt();
 
@@ -92,7 +98,7 @@ void MainWindow::labelClicked(){
 	}
 }
 
-void MainWindow::currentIndexChanged(int index){
+void SettingClass::currentIndexChanged(int index){
 //	std::cout << "current index : " << index << std::endl;
 
 	if(index > 0){
@@ -120,11 +126,11 @@ void MainWindow::currentIndexChanged(int index){
 	memcpy(cell[selectedCell].type, fileName[index].toStdString().c_str(), 10);
 }
 
-void MainWindow::activated(int index){
+void SettingClass::activated(int index){
 	currentIndexChanged(index);
 }
 
-void MainWindow::btnCWClicked(){
+void SettingClass::btnCWClicked(){
 	rotateImage(-90);
 
 	angle -= 90;
@@ -133,7 +139,7 @@ void MainWindow::btnCWClicked(){
 	cell[selectedCell].angle = angle;
 }
 
-void MainWindow::btnCCWClicked(){
+void SettingClass::btnCCWClicked(){
 	rotateImage(90);
 
 	angle += 90;
@@ -142,12 +148,12 @@ void MainWindow::btnCCWClicked(){
 	cell[selectedCell].angle = angle;
 }
 
-void MainWindow::rotateImage(int ang){
+void SettingClass::rotateImage(int ang){
 	label[selectedCell]->setPixmap(label[selectedCell]->pixmap()->transformed(QTransform().rotate(ang)));
 	label[selectedCell]->setAlignment(Qt::AlignmentFlag::AlignCenter);
 }
 
-void MainWindow::btnSaveClicked(){
+void SettingClass::btnSaveClicked(){
 	xml_document doc;
 	xml_node dec = doc.append_child(node_declaration);
 	dec.append_attribute("version") = "1.0";
@@ -162,12 +168,18 @@ void MainWindow::btnSaveClicked(){
 		section.append_child("angle").append_child(node_pcdata).set_value(std::to_string(cell[i].angle).c_str());
 	}
 
-	doc.save_file("../layout.xml");
+	doc.save_file(":/xml/layout.xml");
 }
 
-void MainWindow::update(){
+void SettingClass::update(){
+	QString pwd("");
+	char *PWD;
+	PWD = getenv("PWD");
+	pwd.append(PWD);
+	std::cout << pwd.toStdString() << std::endl;
+
 	xml_document doc;
-	xml_parse_result result = doc.load_file("../layout.xml");
+	xml_parse_result result = doc.load_file(":/xml/layout.xml");
 
 	if(result.status == 0){
 		int indx = 0;
@@ -179,7 +191,7 @@ void MainWindow::update(){
 		}
 	}
 	else{
-		std::cout << result.description() << std::endl;
+		std::cout << "xml load error : " << result.description() << std::endl;
 	}
 
 	for(uint i = 0; i < 9; i++){

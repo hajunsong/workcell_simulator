@@ -3,6 +3,10 @@
 
 MainWindow::MainWindow(ros::NodeHandle _nh, QWidget* parent) : nh(_nh), QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
+
+	settingClass = new SettingClass();
+
+	connect(settingClass, SIGNAL(windowClose()), this, SLOT(settingClose()));
 }
 
 MainWindow::~MainWindow(){
@@ -10,7 +14,7 @@ MainWindow::~MainWindow(){
 }
 
 void MainWindow::setting(){
-
+	settingClass->show();
 }
 
 void MainWindow::loading(){
@@ -18,14 +22,14 @@ void MainWindow::loading(){
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event){
-//	std::cout << (int)event->key() << std::endl;
+	std::cout << (int)event->key() << std::endl;
     
-//	if(event->key() == Qt::Key_F5){
-//		setting();
-//	}
-//	else if(event->key() == Qt::Key_F6){
-//		loading();
-//	}
+	if(event->key() == Qt::Key_F5){
+		setting();
+	}
+	else if(event->key() == Qt::Key_F6){
+		loading();
+	}
 }
 
 void MainWindow::closeEvent(QCloseEvent *event){
@@ -41,7 +45,7 @@ void MainWindow::closeEvent(QCloseEvent *event){
 }
 
 void MainWindow::settingClose(){
-//    std::cout << "setting window close" << std::endl;
+	std::cout << "setting window close" << std::endl;
 
-//    loading();
+	loading();
 }
