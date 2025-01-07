@@ -118,9 +118,9 @@ void MainWindow::btnSaveClicked(){
 	dec.append_attribute("version") = "1.0";
 	dec.append_attribute("encoding") = "UTF-8";
 
-	xml_node  = doc.append_child("cell");
+//	xml_node  = doc.append_child("cell");
 
-	xml_node cell = .append_child("cell");
+//	xml_node cell = .append_child("cell");
 
 	doc.save_file("layout.xml");
 }
