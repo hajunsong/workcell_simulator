@@ -13,9 +13,9 @@ int main(int argc, char** argv){
     ros::NodeHandle nh;
 
     QApplication a(argc, argv);
-    MainWindow w(nh);
-    // w.move(1920*2 + 1280, 100);
-    w.show();
+	MainWindow w(nh);
+	// w.move(1920*2 + 1280, 100);
+	w.show();
 
     return a.exec();
 }

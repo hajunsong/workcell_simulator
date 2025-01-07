@@ -15,6 +15,12 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
+typedef struct Section{
+	char type[16];
+	int id;
+	int angle;
+}section;
+
 class MainWindow : public QMainWindow
 {
 	Q_OBJECT
@@ -33,7 +39,10 @@ private:
 	uint selectedCell;
 	int angle;
 
+	section cell[9];
+
 	void update();
+	void rotateImage(int ang);
 
 public slots:
 	// click label event
@@ -41,6 +50,7 @@ public slots:
 
 	// combo box event
 	void currentIndexChanged(int index);
+	void activated(int arg);
 
 	// button event
 	void btnCWClicked();

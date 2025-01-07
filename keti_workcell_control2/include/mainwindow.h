@@ -25,7 +25,8 @@ public:
 private:
     Ui::MainWindow *ui;
     ros::NodeHandle nh;
-    SettingClass *settingClass;
+
+	SettingClass *settingClass;
 
     void setting();
     void loading();
