@@ -8,8 +8,6 @@
 
 #include <iostream>
 
-#include "settingclass.h"
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -25,7 +23,6 @@ public:
 private:
     Ui::MainWindow *ui;
     ros::NodeHandle nh;
-    SettingClass *settingClass;
 
     void setting();
     void loading();
