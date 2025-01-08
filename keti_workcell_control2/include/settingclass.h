@@ -20,7 +20,7 @@ QT_END_NAMESPACE
 typedef struct Section{
 	char type[16];
 	int id;
-	int angle;
+	int angle, old_angle;
 }section;
 
 class SettingClass : public QWidget
@@ -30,6 +30,7 @@ class SettingClass : public QWidget
 public:
 	SettingClass(QWidget *parent = nullptr);
 	~SettingClass();
+	void getLayoutInfor(section* arg);
 
 private:
 	Ui::SettingClass *ui;
@@ -45,18 +46,19 @@ private:
 
 	void update();
 	void rotateImage(int ang);
-
+	
 public slots:
 	// click label event
 	void labelClicked();
 
 	// combo box event
 	void currentIndexChanged(int index);
-	void activated(int arg);
+	void typeActivated(int arg);
+	void poseActivated(int arg);
 
 	// button event
-	void btnCWClicked();
-	void btnCCWClicked();
+	// void btnCWClicked();
+	// void btnCCWClicked();
 	void btnSaveClicked();
 
 	// close event

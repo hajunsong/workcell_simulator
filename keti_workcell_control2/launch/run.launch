@@ -2,7 +2,9 @@
 <launch>
     <node pkg="keti_workcell_control2" type="robot_control_node2" name="robot_control_node2" output="screen"/>
     <!-- <include file="$(find keti_workcell_description)/launch/display.launch"/> -->
-    <!-- <group ns="base_UR">
+	<!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find keti_workcell_description)/urdf.rviz" /> -->
+	
+    <group ns="base_UR">
 		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_UR.urdf" />
     </group>
@@ -25,5 +27,5 @@
 	<group ns="base_VISION">
 		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 		<param name="robot_description" textfile="$(find keti_workcell_description)/urdf/base_VISION.urdf" /> 
-	</group> -->
+	</group>
 </launch>

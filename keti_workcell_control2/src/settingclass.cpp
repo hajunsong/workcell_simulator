@@ -34,7 +34,7 @@ SettingClass::SettingClass(QWidget *parent) : QWidget(parent), ui(new Ui::Settin
 	selectedCell = 0;
 
 //	connect(ui->cbCellType, SIGNAL(currentIndexChanged(int)), this, SLOT(currentIndexChanged(int)));
-	connect(ui->cbCellType, SIGNAL(activated(int)), this, SLOT(activated(int)));
+	connect(ui->cbCellType, SIGNAL(activated(int)), this, SLOT(typeActivated(int)));
 	cellName.push_back("");
 	cellName.push_back("ROBOT");
 	cellName.push_back("ARF");
@@ -45,9 +45,10 @@ SettingClass::SettingClass(QWidget *parent) : QWidget(parent), ui(new Ui::Settin
 
 	ui->cbCellType->addItems(cellName);
 
+	connect(ui->cbCellPose, SIGNAL(activated(int)), this, SLOT(poseActivated(int)));
 
-	connect(ui->btnCCW, SIGNAL(clicked()), this, SLOT(btnCCWClicked()));
-	connect(ui->btnCW, SIGNAL(clicked()), this, SLOT(btnCWClicked()));
+	// connect(ui->btnCCW, SIGNAL(clicked()), this, SLOT(btnCCWClicked()));
+	// connect(ui->btnCW, SIGNAL(clicked()), this, SLOT(btnCWClicked()));
 	connect(ui->btnSave, SIGNAL(clicked()), this, SLOT(btnSaveClicked()));
 
 
@@ -95,6 +96,9 @@ void SettingClass::labelClicked(){
 		ui->txtCellNum->setText(QString::number(selectedCell + 1));
 
 		ui->cbCellType->setCurrentIndex(cell[selectedCell].id);
+
+		ui->cbCellPose->setCurrentText(QString::number(cell[selectedCell].angle));
+
 	}
 }
 
@@ -126,31 +130,36 @@ void SettingClass::currentIndexChanged(int index){
 	memcpy(cell[selectedCell].type, fileName[index].toStdString().c_str(), 10);
 }
 
-void SettingClass::activated(int index){
+void SettingClass::typeActivated(int index){
 	currentIndexChanged(index);
 }
 
-void SettingClass::btnCWClicked(){
-	rotateImage(-90);
+void SettingClass::poseActivated(int index){
+	QImage image;
+	QPixmap pixmap;
 
-	angle -= 90;
-	if(angle == -360) angle = 0;
+	if(image.load(QString(":/images/" + fileName[cell[selectedCell].id].toLower() + ".png"))){
+		pixmap = QPixmap::fromImage(image);
+		pixmap = pixmap.scaled(label[selectedCell]->geometry().width() - 4, label[selectedCell]->geometry().height() - 4);
+	}
+	label[selectedCell]->setPixmap(pixmap);
+	label[selectedCell]->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-	cell[selectedCell].angle = angle;
-}
-
-void SettingClass::btnCCWClicked(){
-	rotateImage(90);
-
-	angle += 90;
-	if(angle == 360) angle = 0;
-
-	cell[selectedCell].angle = angle;
+	int ang = ui->cbCellPose->currentText().toInt();
+	cell[selectedCell].angle = ang;
+	rotateImage(ang);
 }
 
 void SettingClass::rotateImage(int ang){
-	label[selectedCell]->setPixmap(label[selectedCell]->pixmap()->transformed(QTransform().rotate(ang)));
+	double angle = ang*M_PI/180.0;
+	QTransform trans(cos(angle), -sin(angle), 0, sin(angle), cos(angle), 0, 0, 0, 1);
+	label[selectedCell]->setPixmap(label[selectedCell]->pixmap()->transformed(trans));
 	label[selectedCell]->setAlignment(Qt::AlignmentFlag::AlignCenter);
+}
+
+void SettingClass::getLayoutInfor(section *arg){
+	update();
+	memcpy(arg, cell, sizeof(section)*9);
 }
 
 void SettingClass::btnSaveClicked(){

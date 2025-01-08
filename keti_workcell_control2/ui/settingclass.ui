@@ -310,13 +310,6 @@
       <string>Adjust</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
-      <item row="2" column="1">
-       <widget class="QPushButton" name="btnCCW">
-        <property name="text">
-         <string>CCW</string>
-        </property>
-       </widget>
-      </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_11">
         <property name="text">
@@ -338,13 +331,6 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="2">
-       <widget class="QPushButton" name="btnCW">
-        <property name="text">
-         <string>CW</string>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="1" colspan="2">
        <widget class="QComboBox" name="cbCellType"/>
       </item>
@@ -356,6 +342,30 @@
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="2">
+       <widget class="QComboBox" name="cbCellPose">
+        <item>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>90</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>180</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>270</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>

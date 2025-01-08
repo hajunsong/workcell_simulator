@@ -11,9 +11,10 @@ Panels:
         - /RobotModel3
         - /RobotModel4
         - /RobotModel5
+        - /TF1
         - /TF1/Frames1
       Splitter Ratio: 0.35794541239738464
-    Tree Height: 371
+    Tree Height: 554
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -60,378 +61,200 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: true
+      Enabled: false
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
-        HP_FeederJig:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         Link Tree Style: Links in Alphabetic Order
-        UR_jig:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        base_UR:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        koras_2f:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link5:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link6:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tool_changer:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        world:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
       Name: RobotModel
       Robot Description: base_UR/robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: true
+      Enabled: false
       Links:
-        ATC_stand:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
-        KRVG_stand:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         Link Tree Style: Links in Alphabetic Order
-        base_ETC:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        feeder:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        koras_2f_stand:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tool_stand:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        world:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
       Name: RobotModel
       Robot Description: base_ETC/robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: true
+      Enabled: false
       Links:
-        ATC:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         All Links Enabled: true
-        DENSO_jig:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        add_axis_jig1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        add_axis_jig2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        base_DENSO:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        d_end:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        d_link0:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        d_link1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        d_link2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        d_link3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        denso_tool_changer:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        slider1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        slider2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        slider_base1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        slider_base2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        world:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
       Name: RobotModel
       Robot Description: base_DENSO/robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: true
+      Enabled: false
       Links:
-        ARF_jig:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        ARF_jig2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        ARF_slider1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        ARF_slider2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        ARF_slider_base1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_ARF:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        grip_adapter11:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        grip_adapter12:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        grip_adapter21:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        grip_adapter22:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        obj1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        obj2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        s4_dummy:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        tooltip11:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tooltip12:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tooltip21:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tooltip22:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        world:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        zimmer1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        zimmer2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: RobotModel
       Robot Description: base_ARF/robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: true
+      Enabled: false
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_VISION:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        cam_jig:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        world:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
       Name: RobotModel
       Robot Description: base_VISION/robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Filter (blacklist): ""
       Filter (whitelist): ""
       Frame Timeout: 15
       Frames:
-        All Enabled: true
+        ARF_jig:
+          Value: false
+        ARF_jig2:
+          Value: false
+        ARF_slider1:
+          Value: false
+        ARF_slider2:
+          Value: false
+        ARF_slider_base1:
+          Value: false
+        ATC:
+          Value: false
+        ATC_stand:
+          Value: false
+        All Enabled: false
+        DENSO_jig:
+          Value: false
+        HP_FeederJig:
+          Value: false
+        KRVG_stand:
+          Value: false
+        UR_jig:
+          Value: false
+        add_axis_jig1:
+          Value: false
+        add_axis_jig2:
+          Value: false
+        base_ARF:
+          Value: true
+        base_DENSO:
+          Value: true
+        base_ETC:
+          Value: true
+        base_UR:
+          Value: true
+        base_VISION:
+          Value: true
+        base_link:
+          Value: false
+        cam_jig:
+          Value: false
+        d_end:
+          Value: false
+        d_link0:
+          Value: false
+        d_link1:
+          Value: false
+        d_link2:
+          Value: false
+        d_link3:
+          Value: false
+        denso_tool_changer:
+          Value: false
+        feeder:
+          Value: false
+        grip_adapter11:
+          Value: false
+        grip_adapter12:
+          Value: false
+        grip_adapter21:
+          Value: false
+        grip_adapter22:
+          Value: false
+        koras_2f:
+          Value: false
+        koras_2f_stand:
+          Value: false
+        link1:
+          Value: false
+        link2:
+          Value: false
+        link3:
+          Value: false
+        link4:
+          Value: false
+        link5:
+          Value: false
+        link6:
+          Value: false
+        obj1:
+          Value: false
+        obj2:
+          Value: false
+        s4_dummy:
+          Value: false
+        slider1:
+          Value: false
+        slider2:
+          Value: false
+        slider_base1:
+          Value: false
+        slider_base2:
+          Value: false
+        tool_changer:
+          Value: false
+        tool_stand:
+          Value: false
+        tooltip11:
+          Value: false
+        tooltip12:
+          Value: false
+        tooltip21:
+          Value: false
+        tooltip22:
+          Value: false
+        world:
+          Value: true
+        zimmer1:
+          Value: false
+        zimmer2:
+          Value: false
       Marker Alpha: 1
       Marker Scale: 1
       Name: TF
@@ -439,9 +262,77 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        world:
+          base_ARF:
+            ARF_jig:
+              ARF_slider_base1:
+                ARF_slider1:
+                  s4_dummy:
+                    ARF_slider2:
+                      ARF_jig2:
+                        obj1:
+                          {}
+                        obj2:
+                          {}
+                        zimmer1:
+                          grip_adapter11:
+                            tooltip11:
+                              {}
+                          grip_adapter12:
+                            tooltip12:
+                              {}
+                        zimmer2:
+                          grip_adapter21:
+                            tooltip21:
+                              {}
+                          grip_adapter22:
+                            tooltip22:
+                              {}
+          base_DENSO:
+            add_axis_jig1:
+              slider_base1:
+                slider1:
+                  add_axis_jig2:
+                    slider_base2:
+                      slider2:
+                        DENSO_jig:
+                          d_link0:
+                            d_link1:
+                              d_link2:
+                                d_link3:
+                                  d_end:
+                                    denso_tool_changer:
+                                      ATC:
+                                        {}
+          base_ETC:
+            feeder:
+              {}
+            tool_stand:
+              ATC_stand:
+                {}
+              KRVG_stand:
+                {}
+              koras_2f_stand:
+                {}
+          base_UR:
+            HP_FeederJig:
+              {}
+            UR_jig:
+              base_link:
+                link1:
+                  link2:
+                    link3:
+                      link4:
+                        link5:
+                          link6:
+                            tool_changer:
+                              koras_2f:
+                                {}
+          base_VISION:
+            cam_jig:
+              {}
       Update Interval: 0
-      Value: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -470,7 +361,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 5.848462104797363
+      Distance: 3.774731159210205
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -478,25 +369,25 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -0.9855591654777527
-        Y: 0.3546116352081299
-        Z: 0.258571058511734
+        X: 0.06009967625141144
+        Y: -0.3455973267555237
+        Z: 0.04349749535322189
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.660398542881012
+      Pitch: 1.4953967332839966
       Target Frame: <Fixed Frame>
-      Yaw: 0.6603975296020508
+      Yaw: 3.1353909969329834
     Saved: ~
 Window Geometry:
   Displays:
-    collapsed: true
+    collapsed: false
   Height: 843
-  Hide Left Dock: true
+  Hide Left Dock: false
   Hide Right Dock: true
-  QMainWindow State: 000000ff00000000fd0000000400000000000001ed000002adfc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073000000003d000002ad000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000002e5fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d000002e5000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000005290000003efc0100000002fb0000000800540069006d0065010000000000000529000003bc00fffffffb0000000800540069006d0065010000000000000450000000000000000000000529000002ad00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000001ed000002adfc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d000002ad000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000002e5fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d000002e5000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000005290000003efc0100000002fb0000000800540069006d0065010000000000000529000003bc00fffffffb0000000800540069006d0065010000000000000450000000000000000000000336000002ad00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -507,4 +398,4 @@ Window Geometry:
     collapsed: true
   Width: 1321
   X: 599
-  Y: 479
+  Y: 405

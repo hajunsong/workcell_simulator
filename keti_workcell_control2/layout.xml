@@ -3,31 +3,31 @@
 	<section num="1">
 		<type></type>
 		<id>0</id>
-		<angle>-270</angle>
+		<angle>0</angle>
 	</section>
 	<section num="2">
-		<type></type>
-		<id>0</id>
-		<angle>0</angle>
-	</section>
-	<section num="3">
-		<type>ROBOT</type>
-		<id>1</id>
+		<type>VISION</type>
+		<id>4</id>
 		<angle>270</angle>
 	</section>
-	<section num="4">
+	<section num="3">
 		<type></type>
 		<id>0</id>
-		<angle>0</angle>
+		<angle>90</angle>
+	</section>
+	<section num="4">
+		<type>ROBOT</type>
+		<id>1</id>
+		<angle>180</angle>
 	</section>
 	<section num="5">
 		<type>ARF</type>
 		<id>2</id>
-		<angle>-180</angle>
+		<angle>0</angle>
 	</section>
 	<section num="6">
-		<type>VISION</type>
-		<id>4</id>
+		<type></type>
+		<id>0</id>
 		<angle>0</angle>
 	</section>
 	<section num="7">
